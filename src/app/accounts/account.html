@@ -1,0 +1,40 @@
+<mp-toolbar></mp-toolbar>
+<div class="wrapper" layout="row" layout-fill ng-hide="vm.loading">
+  <mp-nav class="md-whiteframe-z2"></mp-nav>
+  <md-content layout-padding flex>
+    <md-tabs md-dynamic-height="" md-border-bottom="">
+      <md-tab label="Call Logs">
+        <md-content class="md-padding">
+          <md-datepicker ng-model="date" md-placeholder="Date Filter"></md-datepicker>
+          <md-list>
+            <md-list-item ng-repeat="customer in vm.callLogs" class="noright">
+              <img alt="{{ customer.name }}" ng-src="{{ customer.img }}" class="md-avatar" />
+              <p>{{ customer.name }}</p>
+              <md-button class="md-icon-button"><md-icon>info</md-icon></md-button>
+              <md-button class="md-icon-button"><md-icon>mail</md-icon></md-button>
+              <md-button class="md-icon-button"><md-icon>call</md-icon></md-button>
+              <md-divider ng-if="!$last"></md-divider>
+            </md-list-item>
+          </md-list>
+        </md-content>
+      </md-tab>
+      <md-tab label="HWD Clinic Info">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Description</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+        </md-content>
+      </md-tab>
+      <md-tab label="Customers">
+        <md-content class="md-padding">
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>
+<div class="wrapper" layout-padding layout-fill ng-show="vm.loading">
+  <pre>Loading</pre>
+</div>
+<md-button class="md-fab md-fab-bottom-right" ng-click="vm.createCallLog($event)">
+  <md-icon>add</md-icon>
+</md-button>
+

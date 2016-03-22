@@ -1,0 +1,43 @@
+<md-toolbar layout="row" layout-align="center center">
+  <div class="md-toolbar-tools">
+    <md-button ui-sref="home({ id: '' })">Scene Scripts</md-button>
+    <span flex></span>
+    <md-menu>
+      <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)"><md-icon>more_vert<md-icon></md-button>
+      <md-menu-content>
+        <md-menu-item>
+          <md-button ng-click="vm.$state.go('admin')">
+            <md-icon>settings</md-icon>
+            <span>Scripts</span>
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="vm.$state.go('users')">
+            <md-icon>settings</md-icon>
+            <span>Scripts</span>
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </div>
+</md-toolbar>
+<div class="wrapper" layout="row" layout-fill layout-padding>
+  <form flex layout="column"nodeIndex ng-submit="vm.saveCsNode()">
+    <span layout="row">
+      <md-button class="md-icon-button" type="button" ng-click="vm.$state.go('home', { id: vm.node._id })">
+        <md-icon>arrow_back</md-icon>
+      </md-button>
+      <h1 ng-show="vm.node._id" class="md-title">Add child: <strong>{{ vm.node.name }}</strong>({{ vm.node._id }})</h1>
+    </span>
+    <md-input-container>
+      <label>Name</label>
+      <input ng-model="vm.name" required>
+    </md-input-container>
+    <md-input-container class="md-block">
+      <label>Script</label>
+      <textarea ng-model="vm.script" required></textarea>
+    </md-input-container>
+    <md-button>Save</md-button>
+  </form>
+</div>
+
