@@ -1,5 +1,5 @@
 export class MainController {
-  constructor ($state, $mdDialog, $document, $log) {
+  constructor ($state, $mdDialog, $document, $log, $ngmUtilsDialog) {
     'ngInject';
 
     //this.loading = true;
@@ -48,6 +48,22 @@ export class MainController {
     this.$mdDialog = $mdDialog;
     this.$document = $document;
     this.$log = $log;
+    this.$ngmUtilsDialog = $ngmUtilsDialog;
+  }
+
+  createCallLogNew(ev) {
+    const $ngmUtilsDialog = this.$ngmUtilsDialog;
+    const $log = this.$log;
+
+    $ngmUtilsDialog.show({
+      title: 'Hello World!',
+      templateUrl: 'app/accounts/create-call-log.html',
+      targetEvent: ev,
+      data: { customers: this.customers }
+    }).then(() => {
+    }, error => {
+      $log.debug(error);
+    });
   }
 
   createCallLog(ev) {
