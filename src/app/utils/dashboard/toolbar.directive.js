@@ -5,7 +5,7 @@ export function ToolbarDirective() {
     restrict: 'E',
     template: `
       <md-toolbar ng-hide="vm.$ngmDashboard.isHideToolbar" layout="row" class="md-whiteframe-z1">
-        <md-button id="main" class="menu" hide-gt-sm ng-click="vm.$ngmDashboard.toggleNav()" aria-label="Show User List">
+        <md-button id="main" class="menu" hide-gt-sm ng-click="vm.$ngmDashboard.toggleSidenav()" aria-label="Show User List">
           <md-icon>menu</md-icon>
         </md-button>
       </md-toolbar>
