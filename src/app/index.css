@@ -1,5 +1,3 @@
-@import url(//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
-
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -35,25 +33,5 @@
 
   /* Support for IE. */
   font-feature-settings: 'liga';
-}
-
-html {
-  font-family: 'Roboto Slab', serif;
-}
-
-[layout=row] {
-  flex-direction: row;
-}
-
-body {
-  overflow: hidden;
-}
-
-.wrapper {
-  padding-bottom: 4rem;
-}
-
-.wrapper > * {
-  overflow: auto;
 }
 
